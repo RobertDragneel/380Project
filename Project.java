@@ -1,4 +1,4 @@
-public class Java {
+public class Project {
     public static void main (String agrs[]) {
         System.out.println("Hello world!");
     }
