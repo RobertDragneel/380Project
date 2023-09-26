@@ -10,6 +10,7 @@ Airline
         # of seats
         maybe plane type/#
         departure/arrival time
+    Airline name
 Seating
     Reserve
     change
