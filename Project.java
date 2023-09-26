@@ -10,5 +10,4 @@ class Customer
     String name;
     String dateOfBirth;
     
-
 }

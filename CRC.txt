@@ -1,0 +1,22 @@
+Customer
+    name
+    dateOfBirth
+    passport #
+    email
+Airline
+    Flight info
+        Flight #
+        Flight location
+        # of seats
+        maybe plane type/#
+        departure/arrival time
+Seating
+    Reserve
+    change
+    cancel
+    pulls info from Airline
+    seat type
+Report
+    pulls from 
+    sends confirmation to customer email
+    send report to manager
