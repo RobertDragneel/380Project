@@ -1,10 +1,8 @@
-package code;
-
 import java.awt.*;
 import java.awt.event.*;
 
-public class Main extends Frame {
-  public Main() {
+public class App extends Frame {
+  public App() {
     Button btn = new Button("Button");
     btn.setBounds(50, 50, 50, 50);
     add(btn);
@@ -20,6 +18,6 @@ public class Main extends Frame {
   }
 
   public static void main(String args[]){
-    new Main();
+    new App();
   }
 }
