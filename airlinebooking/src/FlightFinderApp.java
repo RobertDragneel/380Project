@@ -53,8 +53,9 @@ public class FlightFinderApp {
                 // Perform flight search logic here
 
                 // Displays new frame (aka window) showing flights.
-                Frame searchingFrame = new Frame("Searching for flights from " + origin + " to " + destination);
+                Frame searchingFrame = new Frame("Flight Search");
                 Label searchingLabel = new Label("Searching for flights from " + origin + " to " + destination);
+                searchingLabel.setAlignment(Label.CENTER);
                 searchingFrame.add(searchingLabel);
                 searchingFrame.setBounds(0, 0, 200, 100);
                 searchingFrame.setVisible(true);
