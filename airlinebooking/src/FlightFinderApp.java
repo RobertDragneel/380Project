@@ -46,10 +46,24 @@ public class FlightFinderApp {
 
         searchButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                // PRINTS TO CONSOLE WHAT FLIGHT IS BEING SEARCHED
                 String origin = originChoice.getSelectedItem();
                 String destination = destinationChoice.getSelectedItem();
                 System.out.println("Searching for flights from " + origin + " to " + destination);
                 // Perform flight search logic here
+
+                // Displays new frame (aka window) showing flights.
+                Frame searchingFrame = new Frame("Searching for flights from " + origin + " to " + destination);
+                Label searchingLabel = new Label("Searching for flights from " + origin + " to " + destination);
+                searchingFrame.add(searchingLabel);
+                searchingFrame.setBounds(0, 0, 200, 100);
+                searchingFrame.setVisible(true);
+
+                searchingFrame.addWindowListener(new WindowAdapter () {
+                    public void windowClosing(WindowEvent e) {
+                        searchingFrame.dispose();
+                    }
+                });
             }
         });
 
