@@ -1,6 +1,5 @@
 import java.awt.*;
 import java.awt.event.*;
-
 import javax.swing.JFrame;
 
 public class FlightFinderApp {
@@ -57,12 +56,13 @@ public class FlightFinderApp {
                 // Displays new frame (aka window) showing flights.
                 Frame searchingFrame = new Frame("Flight Search");
                 Label searchingLabel = new Label("Searching for flights from " + origin + " to " + destination);
-                searchingLabel.setAlignment(Label.CENTER);
+                searchingLabel.setAlignment(Label.CENTER); // Aligns text to center
                 searchingFrame.add(searchingLabel);
                 searchingFrame.setBounds(0, 0, 200, 100);
                 searchingFrame.setVisible(true);
-                searchingFrame.setExtendedState(searchingFrame.getExtendedState() | JFrame.MAXIMIZED_BOTH);
+                searchingFrame.setExtendedState(searchingFrame.getExtendedState() | JFrame.MAXIMIZED_BOTH); // Opens up frame to maximize size
 
+                // Allows searchingFrame to be closed.
                 searchingFrame.addWindowListener(new WindowAdapter () {
                     public void windowClosing(WindowEvent e) {
                         searchingFrame.dispose();
@@ -73,8 +73,9 @@ public class FlightFinderApp {
 
         frame.setSize(300, 200);
         frame.setVisible(true);
-        frame.setExtendedState(frame.getExtendedState() | JFrame.MAXIMIZED_BOTH);
+        frame.setExtendedState(frame.getExtendedState() | JFrame.MAXIMIZED_BOTH); // Opens up frame to maximize size
 
+        // Allows main frame be closed.
         frame.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
                 frame.dispose();
