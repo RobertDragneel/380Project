@@ -1,6 +1,8 @@
 import java.awt.*;
 import java.awt.event.*;
 
+import javax.swing.JFrame;
+
 public class FlightFinderApp {
     private Frame frame;
     private Choice originChoice;
@@ -59,6 +61,7 @@ public class FlightFinderApp {
                 searchingFrame.add(searchingLabel);
                 searchingFrame.setBounds(0, 0, 200, 100);
                 searchingFrame.setVisible(true);
+                searchingFrame.setExtendedState(searchingFrame.getExtendedState() | JFrame.MAXIMIZED_BOTH);
 
                 searchingFrame.addWindowListener(new WindowAdapter () {
                     public void windowClosing(WindowEvent e) {
@@ -70,6 +73,7 @@ public class FlightFinderApp {
 
         frame.setSize(300, 200);
         frame.setVisible(true);
+        frame.setExtendedState(frame.getExtendedState() | JFrame.MAXIMIZED_BOTH);
 
         frame.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
