@@ -22,6 +22,7 @@ public class FlightFinderApp {
         destinationChoice.add("Chicago, Illinois");
         destinationChoice.add("Miami, Florida");
 
+        //GridBagLayout used to organize GUI elements
         frame.setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
 
