@@ -14,4 +14,20 @@ public class Customer {
         this.email = email;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public LocalDate getdob() {
+        return dob;
+    }
+
+    public int getPassportNum() {
+        return passportNum;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
 }
