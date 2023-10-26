@@ -6,9 +6,10 @@ public class Airline
     private int departureTime; //24 hour clock ex: 0300 3am
     private int arrivalTime;
 
-    public Airline()
+    public Flight(int flightNumber, int departureTime, int arrivalTime)
     {
-
+        createAirplane();
+        this.flightNumber = myAirplane.getFlightNumber();
     }
 
     public void createAirplane()
@@ -16,9 +17,5 @@ public class Airline
         Airplane myAirplane = new Airplane();
     }
 
-    public string getAirplaneModel(flightNumber)
-    {
-        Airplane myAirplane = 
-    }
 
 }
