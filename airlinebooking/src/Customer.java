@@ -18,16 +18,36 @@ public class Customer {
         return name;
     }
 
-    public LocalDate getdob() {
+    public void setName()
+    {
+
+    }
+
+    public LocalDate getDob() {
         return dob;
+    }
+
+    public void setDob()
+    {
+
     }
 
     public int getPassportNum() {
         return passportNum;
     }
 
+    public void setPassportNum()
+    {
+
+    }
+
     public String getEmail() {
         return email;
+    }
+
+    public void setEmail()
+    {
+        
     }
 
 }
