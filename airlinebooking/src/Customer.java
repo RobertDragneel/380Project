@@ -7,6 +7,11 @@ public class Customer {
     private int passportNum;
     private String email;
 
+    public Customer()
+    {
+        
+        
+    }
     public Customer(String name, LocalDate dob, int passportNum, String email) {
         this.name = name;
         this.dob = dob;
@@ -47,7 +52,7 @@ public class Customer {
 
     public void setEmail()
     {
-        
+
     }
 
 }
