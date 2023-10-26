@@ -1,13 +1,24 @@
-import java.Time.LocalDateTime;
+import java.time.LocalDate;
 
-public class Airline {
+public class Airline
+{
+    private int flightNumber;
+    private int departureTime; //24 hour clock ex: 0300 3am
+    private int arrivalTime;
 
-    private int flightNum;
-    private LocalDateTime departure;
-    private LocalDateTime arrival;
+    public Airline()
+    {
 
-    public void getSeatsAvailable() {
-        //For getting available seats.
+    }
+
+    public void createAirplane()
+    {
+        Airplane myAirplane = new Airplane();
+    }
+
+    public string getAirplaneModel(flightNumber)
+    {
+        Airplane myAirplane = 
     }
 
 }
