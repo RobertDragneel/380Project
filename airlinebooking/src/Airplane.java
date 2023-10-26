@@ -11,6 +11,26 @@ public class Airplane
 
     public void setFlightNumber()
     {
+
+    }
+
+    public int getDepartureTime()
+    {
+        return departureTime;
+    }
+
+    public void setDepartureTime()
+    {
+
+    }
+
+    public int getArrivalTime()
+    {
+        return arrivalTime;
+    }
+
+    public void setArrivalTime()
+    {
         
     }
 }
