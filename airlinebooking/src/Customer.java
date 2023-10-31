@@ -25,7 +25,7 @@ public class Customer {
 
     public void setName()
     {
-
+        name = "Test";
     }
 
     public LocalDate getDob() {
