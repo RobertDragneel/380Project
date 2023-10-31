@@ -13,7 +13,7 @@ public class FlightFinderApp {
         originChoice = new Choice();
         destinationChoice = new Choice();
         searchButton = new Button("Search");
-
+            
         // Adding destinations to the dropdowns
         originChoice.add("Austin, Texas");
         originChoice.add("Los Angeles, California");
