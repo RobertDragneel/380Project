@@ -6,8 +6,6 @@ public class Reservation {
     }
 
 
-
-
     public void search() {
         //For searching flights
     }
