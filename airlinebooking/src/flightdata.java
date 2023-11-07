@@ -1,23 +1,12 @@
-
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class flightdata {
-
-    public String Atime;
-    public String Dtime;
-    public String Adate;
-    public String Ddate;
-    public String airline;
-    public String fightnum;
-    public String departure;
-    public String arrival;
-
-
     public static void main(String[] args) {
         try {
             // Load the Excel file
@@ -37,13 +26,22 @@ public class flightdata {
                 columns[i] = new ArrayList<>();
             }
 
+            // Create a date format
+            SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm");
+
             // Iterate through the rows and columns to populate the arrays
-            for (int row = 0; row < numRows; row++) {
+            for (int row = 1; row < numRows; row++) {
                 Row currentRow = sheet.getRow(row);
                 for (int col = 0; col < numCols; col++) {
                     Cell cell = currentRow.getCell(col);
                     if (cell != null) {
-                        columns[col].add(cell.toString());
+                        if (col == 5 || col == 7) {
+                            // Format date and time values
+                            Date dateValue = cell.getDateCellValue();
+                            columns[col].add(dateFormat.format(dateValue));
+                        } else {
+                            columns[col].add(cell.toString());
+                        }
                     } else {
                         columns[col].add(""); // Empty cell
                     }
