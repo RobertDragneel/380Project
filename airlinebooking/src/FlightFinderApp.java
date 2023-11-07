@@ -15,9 +15,17 @@ public class FlightFinderApp {
         searchButton = new Button("Search");
             
         // Adding destinations to the dropdowns
-        originChoice.add("Austin, Texas");
-        originChoice.add("Los Angeles, California");
-        originChoice.add("Portland, Oregon");
+        originChoice.add("CDG - Paris, France");
+        originChoice.add("DAL - Dallas, USA");
+        originChoice.add("DXB - Dubai, UAE");
+        originChoice.add("FRA - Frankfurt, Germany");
+        originChoice.add("JFK - New York City, USA");
+        originChoice.add("LAX - Los Angeles, USA");
+        originChoice.add("LHR - London, UK");
+        originChoice.add("MIA - Miami, USA");
+        originChoice.add("ORD - Chicago, USA");
+        originChoice.add("SIN - Changi, Singapore");
+        originChoice.add("SYD - Sydney, Australia");
         destinationChoice.add("New York City, New York");
         destinationChoice.add("Chicago, Illinois");
         destinationChoice.add("Miami, Florida");
