@@ -33,4 +33,9 @@ public class Airplane
     {
         
     }
+
+    public void createSeating()
+    {
+        Seating mySeating = new Seating();
+    }
 }
