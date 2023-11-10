@@ -2,7 +2,7 @@ public class Reservation {
 
     public void createCustomer()
     {
-        Customer myCustomer = new Customer();
+        
     }
 
 
