@@ -11,7 +11,7 @@ public class GUI {
 
     public GUI() {
         startingWindow = new Frame("Flight Reservation");
-        origin = new Choice();
+        origin = new Choice(); 
         destination  = new Choice();
         search = new Button("Search");
 
@@ -54,6 +54,29 @@ public class GUI {
         startingWindow.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
                 startingWindow.dispose();
+            }
+        });
+
+        search.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // Displays new frame (aka window) showing flights
+                String originChoice = origin.getSelectedItem();
+                String destinationChoice = destination.getSelectedItem();
+                Frame searchingFrame = new Frame("Flight Searching");
+                Label searchingLabel = new Label("Searching flights from (Origin: " + originChoice + ") to (Destination: " + destinationChoice + ")...");
+                
+                searchingLabel.setAlignment(Label.CENTER); // Aligns text to center
+                searchingFrame.add(searchingLabel);
+                searchingFrame.setBackground(Color.getHSBColor(207f/360f, (float) 0.54, (float) 0.87)); // Sets background color of window
+                searchingFrame.setVisible(true);
+                searchingFrame.setExtendedState(Frame.MAXIMIZED_BOTH); // Maxizes window screen size
+
+                // Allows searchingFrame to be closed
+                searchingFrame.addWindowListener(new WindowAdapter() {
+                    public void windowClosing(WindowEvent e) {
+                        searchingFrame.dispose();
+                    }
+                });
             }
         });
     }
