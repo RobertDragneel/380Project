@@ -64,9 +64,24 @@ public class GUI {
                 String destinationChoice = destination.getSelectedItem();
                 Frame searchingFrame = new Frame("Flight Searching");
                 Label searchingLabel = new Label("Searching flights from (Origin: " + originChoice + ") to (Destination: " + destinationChoice + ")...");
-                
-                searchingLabel.setAlignment(Label.CENTER); // Aligns text to center
-                searchingFrame.add(searchingLabel);
+
+                // Gets flight data from flightdata class
+                String flights = flightdata.readExcelSheet();
+                Label flightsList = new Label(flights);
+
+                // GrideBagLayout used to organize elements
+                searchingFrame.setLayout(new GridBagLayout());
+                GridBagConstraints gbc_flightSearch = new GridBagConstraints();
+
+                // Organizes the elements through the coordinates
+                gbc_flightSearch.gridx = 0;
+                gbc_flightSearch.gridy = 0;
+                searchingFrame.add(searchingLabel, gbc_flightSearch);
+
+                gbc_flightSearch.gridx = 0;
+                gbc_flightSearch.gridy = 1;
+                searchingFrame.add(flightsList, gbc_flightSearch);
+
                 searchingFrame.setBackground(Color.getHSBColor(207f/360f, (float) 0.54, (float) 0.87)); // Sets background color of window
                 searchingFrame.setVisible(true);
                 searchingFrame.setExtendedState(Frame.MAXIMIZED_BOTH); // Maxizes window screen size
