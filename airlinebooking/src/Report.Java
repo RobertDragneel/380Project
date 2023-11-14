@@ -15,8 +15,12 @@ public class Report
 
     Report.write("Name: " + Customer.name + "\n");
     Report.append("DOB: " + Customer.dob + "\n");
-    Report.append("Passport Num: " + Customer.passportNum + "\n");
+    Report.append("Passport Number: " + Customer.passportNum + "\n");
     Report.append("Email: " + Customer.email + "\n");
-    
+
+    Report.append("Flight Number: " + Airplane.flightNumber + "\n");
+    Report.append("Departure Time: " + Airplane.departureTime + "\n");
+    Report.append("Arrival Time: " + Airplane.arrivalTime + "\n");
+
 }
 
