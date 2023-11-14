@@ -1,4 +1,5 @@
 import java.io.File;
+import java.io.FileWriter;
 
 public class Report
 {
@@ -12,5 +13,10 @@ public class Report
       System.out.println("File already exists.");
     }
 
+    Report.write("Name: " + Customer.name + "\n");
+    Report.append("DOB: " + Customer.dob + "\n");
+    Report.append("Passport Num: " + Customer.passportNum + "\n");
+    Report.append("Email: " + Customer.email + "\n");
     
 }
+
