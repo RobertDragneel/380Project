@@ -9,10 +9,10 @@ import java.util.List;
 
 public class flightdata {
 
-    public static List<String>[] readExcelData(String filePath) {
+    public static List<String>[] readExcelData() {
         try {
             // Load the Excel file
-            FileInputStream fis = new FileInputStream(filePath);
+            FileInputStream fis = new FileInputStream("C:\\\\Users\\\\alonn\\\\OneDrive\\\\Desktop\\\\380\\\\380Project\\\\flight_list.xlsx");
             Workbook workbook = new XSSFWorkbook(fis);
 
             // Get the first sheet in the workbook (you can specify a different sheet if needed)
@@ -61,9 +61,8 @@ public class flightdata {
         }
     }
      
-    /*public static void main(String[] args) {
-        String filePath = "C:\\Users\\alonn\\OneDrive\\Desktop\\380\\380Project\\flight_list.xlsx";
-        List<String>[] dataColumns = readExcelData(filePath);
+    public static void main(String[] args) {
+        List<String>[] dataColumns = readExcelData();
 
         if (dataColumns != null) {
             // You can now access the data in each column array
@@ -71,5 +70,5 @@ public class flightdata {
                 System.out.println("Column " + (col + 1) + ": " + dataColumns[col]);
             }
         }
-    }*/
+    }
 }
