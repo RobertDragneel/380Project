@@ -9,7 +9,10 @@ public class Customer {
 
     public Customer()
     {
-        
+        this.name = "N/A";
+        this.dob = dob.now();
+        this.passportNum = 0;
+        this.email = "N/A";
         
     }
     public Customer(String name, LocalDate dob, int passportNum, String email) {
@@ -23,36 +26,18 @@ public class Customer {
         return name;
     }
 
-    public void setName()
-    {
-        name = "Test";
-    }
-
     public LocalDate getDob() {
         return dob;
     }
 
-    public void setDob()
-    {
-
-    }
 
     public int getPassportNum() {
         return passportNum;
     }
 
-    public void setPassportNum()
-    {
-
-    }
 
     public String getEmail() {
         return email;
-    }
-
-    public void setEmail()
-    {
-
     }
 
 }
