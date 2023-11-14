@@ -61,7 +61,7 @@ public class flightdata {
         }
     }
      
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         List<String>[] dataColumns = readExcelData();
 
         if (dataColumns != null) {
@@ -70,5 +70,5 @@ public class flightdata {
                 System.out.println("Column " + (col + 1) + ": " + dataColumns[col]);
             }
         }
-    }
+    }*/
 }
