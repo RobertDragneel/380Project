@@ -21,6 +21,8 @@ public class Report
     Report.append("Flight Number: " + Airplane.flightNumber + "\n");
     Report.append("Departure Time: " + Airplane.departureTime + "\n");
     Report.append("Arrival Time: " + Airplane.arrivalTime + "\n");
+    
+    Report.close();
 
 }
 
