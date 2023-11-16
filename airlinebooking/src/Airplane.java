@@ -9,9 +9,9 @@ public class Airplane
         return flightNumber;
     }
 
-    public void setFlightNumber()
+    public void setFlightNumber(int flightNumber)
     {
-
+        this.flightNumber = flightNumber;
     }
 
     public int getDepartureTime()
@@ -19,9 +19,9 @@ public class Airplane
         return departureTime;
     }
 
-    public void setDepartureTime()
+    public void setDepartureTime(int departureTime)
     {
-
+        this.departureTime = departureTime;
     }
 
     public int getArrivalTime()
@@ -29,13 +29,9 @@ public class Airplane
         return arrivalTime;
     }
 
-    public void setArrivalTime()
+    public void setArrivalTime(int arrivalTime)
     {
-        
+        this.arrivalTime = arrivalTime;
     }
 
-    public void createSeating()
-    {
-        
-    }
 }
