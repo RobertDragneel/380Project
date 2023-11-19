@@ -57,6 +57,7 @@ public class GUI {
             }
         });
 
+        // Brings user to the search page which displays the flights that the user can choose from
         search.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 // Displays new frame (aka window) showing flights
@@ -64,10 +65,15 @@ public class GUI {
                 String destinationChoice = destination.getSelectedItem();
                 Frame searchingFrame = new Frame("Flight Searching");
                 Label searchingLabel = new Label("Searching flights from (Origin: " + originChoice + ") to (Destination: " + destinationChoice + ")...");
+                Button reserveButton = new Button("Reserve");
 
+
+                /*
                 // Gets flight data from flightdata class
                 String flights = flightdata.readExcelSheet();
                 Label flightsList = new Label(flights);
+                 */
+ 
 
                 // GrideBagLayout used to organize elements
                 searchingFrame.setLayout(new GridBagLayout());
@@ -78,9 +84,17 @@ public class GUI {
                 gbc_flightSearch.gridy = 0;
                 searchingFrame.add(searchingLabel, gbc_flightSearch);
 
+
+                /*
                 gbc_flightSearch.gridx = 0;
                 gbc_flightSearch.gridy = 1;
                 searchingFrame.add(flightsList, gbc_flightSearch);
+                */
+
+
+                gbc_flightSearch.gridx = 0;
+                gbc_flightSearch.gridy = 2;
+                searchingFrame.add(reserveButton, gbc_flightSearch);
 
                 searchingFrame.setBackground(Color.getHSBColor(207f/360f, (float) 0.54, (float) 0.87)); // Sets background color of window
                 searchingFrame.setVisible(true);
@@ -91,6 +105,13 @@ public class GUI {
                     public void windowClosing(WindowEvent e) {
                         searchingFrame.dispose();
                     }
+                });
+
+                reserveButton.addActionListener(new ActionListener() {
+                   public void actionPerformed(ActionEvent e) {
+                        // Displays another window that brings user to the reservation screen
+                        TextField name, email, dob, passportNum;
+                   }
                 });
             }
         });
