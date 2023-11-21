@@ -4,14 +4,28 @@ public class Airplane
     private int departureTime;
     private int arrivalTime;
 
+    public Airplane() //default constructor
+    {
+        this.flightNumber = -1;
+        this.departureTime = -1;
+        this.arrivalTime = -1;
+    }
+
+    public Airplane(int flightNumber, int departureTime, int arrivalTime)
+    {
+        this.flightNumber = flightNumber;
+        this.departureTime = departureTime;
+        this.arrivalTime = arrivalTime;
+    }
+
     public int getFlightNumber()
     {
         return flightNumber;
     }
 
-    public void setFlightNumber()
+    public void setFlightNumber(int flightNumber)
     {
-
+        this.flightNumber = flightNumber;
     }
 
     public int getDepartureTime()
@@ -19,9 +33,9 @@ public class Airplane
         return departureTime;
     }
 
-    public void setDepartureTime()
+    public void setDepartureTime(int departureTime)
     {
-
+        this.departureTime = departureTime;
     }
 
     public int getArrivalTime()
@@ -29,13 +43,9 @@ public class Airplane
         return arrivalTime;
     }
 
-    public void setArrivalTime()
+    public void setArrivalTime(int arrivalTime)
     {
-        
+        this.arrivalTime = arrivalTime;
     }
 
-    public void createSeating()
-    {
-        
-    }
 }
