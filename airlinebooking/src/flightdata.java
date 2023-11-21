@@ -60,7 +60,8 @@ public class flightdata {
             return null;
         }
     }
-     
+    
+    //reads through the given array in the list to find the traget item
     public static List<Integer> findIndices(List<String>[] dataColumns, String target, int col) {
         List<Integer> indices = new ArrayList<>();
 
@@ -73,7 +74,7 @@ public class flightdata {
         return indices;
     }
 
-
+    //this is used for testing
     /*public static void main(String[] args) {
         List<String>[] dataColumns = readExcelData();
 
