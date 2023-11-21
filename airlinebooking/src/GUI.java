@@ -122,12 +122,20 @@ public class GUI {
                         Frame reservationFrame = new Frame("Flight Reserving");
                         Button completeButton = new Button("Complete");
                         Label blankLabel = new Label(" ");
-                        TextField name, email, dob, passportNum;
+                        Label fnLabel, lnLabel, emailLabel, dobLabel, passportLabel;
+                        TextField firstName, lastName, email, dob, passportNum;
 
-                        name = new TextField();
-                        email = new TextField();
-                        dob = new TextField();
-                        passportNum = new TextField();
+                        fnLabel = new Label("First Name: ");
+                        lnLabel = new Label("Last Name: ");
+                        emailLabel = new Label("Email: ");
+                        dobLabel = new Label("Date of Birth: ");
+                        passportLabel = new Label("Passport #: ");
+
+                        firstName = new TextField("", 15);
+                        lastName = new TextField("", 15);
+                        email = new TextField("", 15);
+                        dob = new TextField("", 15);
+                        passportNum = new TextField("", 15);
 
                         // GrideBagLayout used to organize elements
                         reservationFrame.setLayout(new GridBagLayout());
@@ -136,26 +144,50 @@ public class GUI {
                         // Organizes the elements through the coordinates
                         gbc_flightReserve.gridx = 0;
                         gbc_flightReserve.gridy = 0;
-                        reservationFrame.add(name, gbc_flightReserve);
+                        reservationFrame.add(fnLabel, gbc_flightReserve);
+
+                        gbc_flightReserve.gridx = 1;
+                        gbc_flightReserve.gridy = 0;
+                        reservationFrame.add(firstName, gbc_flightReserve);
 
                         gbc_flightReserve.gridx = 0;
                         gbc_flightReserve.gridy = 1;
-                        reservationFrame.add(email, gbc_flightReserve);
+                        reservationFrame.add(lnLabel, gbc_flightReserve);
+
+                        gbc_flightReserve.gridx = 1;
+                        gbc_flightReserve.gridy = 1;
+                        reservationFrame.add(lastName, gbc_flightReserve);
 
                         gbc_flightReserve.gridx = 0;
                         gbc_flightReserve.gridy = 2;
-                        reservationFrame.add(dob, gbc_flightReserve);
+                        reservationFrame.add(emailLabel, gbc_flightReserve);
+
+                        gbc_flightReserve.gridx = 1;
+                        gbc_flightReserve.gridy = 2;
+                        reservationFrame.add(email, gbc_flightReserve);
 
                         gbc_flightReserve.gridx = 0;
                         gbc_flightReserve.gridy = 3;
-                        reservationFrame.add(passportNum, gbc_flightReserve);
+                        reservationFrame.add(dobLabel, gbc_flightReserve);
+
+                        gbc_flightReserve.gridx = 1;
+                        gbc_flightReserve.gridy = 3;
+                        reservationFrame.add(dob, gbc_flightReserve);
 
                         gbc_flightReserve.gridx = 0;
                         gbc_flightReserve.gridy = 4;
-                        reservationFrame.add(blankLabel, gbc_flightReserve);
+                        reservationFrame.add(passportLabel, gbc_flightReserve);
+
+                        gbc_flightReserve.gridx = 1;
+                        gbc_flightReserve.gridy = 4;
+                        reservationFrame.add(passportNum, gbc_flightReserve);
 
                         gbc_flightReserve.gridx = 0;
                         gbc_flightReserve.gridy = 5;
+                        reservationFrame.add(blankLabel, gbc_flightReserve);
+
+                        gbc_flightReserve.gridx = 1;
+                        gbc_flightReserve.gridy = 6;
                         reservationFrame.add(completeButton, gbc_flightReserve);
 
                         reservationFrame.setBackground(Color.getHSBColor(207f/360f, (float) 0.54, (float) 0.87)); // Sets background color of window
