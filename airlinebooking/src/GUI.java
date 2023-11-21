@@ -200,6 +200,23 @@ public class GUI {
                                 reservationFrame.dispose();
                             }
                         });
+                        
+                        completeButton.addActionListener(new ActionListener() {
+                            public void actionPerformed(ActionEvent e) {
+                                Frame reviewFrame = new Frame("Review Reservation");
+
+                                reviewFrame.setBackground(Color.getHSBColor(207f/360f, (float) 0.54, (float) 0.87)); // Sets background color of window
+                                reviewFrame.setVisible(true);
+                                reviewFrame.setExtendedState(Frame.MAXIMIZED_BOTH); // Maxizes window screen size
+
+                                // Allows reservationFrame to be closed
+                                reviewFrame.addWindowListener(new WindowAdapter() {
+                                    public void windowClosing(WindowEvent e) {
+                                        reviewFrame.dispose();
+                                    }
+                                });
+                            }
+                        });
                     }
                 });
             }
