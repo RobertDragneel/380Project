@@ -7,7 +7,7 @@ public class Customer {
     private int passportNum;
     private String email;
 
-    public Customer()
+    public Customer() //default constructor
     {
         this.name = "N/A";
         this.dob = dob.now();
@@ -20,24 +20,45 @@ public class Customer {
         this.dob = dob;
         this.passportNum = passportNum;
         this.email = email;
-    }
-
-    public String getName() {
+    } //likely wont need this as customer will be created then variables set after (keeping incase)
+    
+    public String getName() 
+    {
         return name;
     }
 
-    public LocalDate getDob() {
+    public void setName(String name)
+    {
+        this.name = name;
+    }
+
+    public LocalDate getDob() 
+    {
         return dob;
     }
 
+    public void setDob(LocalDate dob)
+    {
+        this.dob = dob;
+    }
 
-    public int getPassportNum() {
+    public int getPassportNum() 
+    {
         return passportNum;
     }
 
+    public void setPassportNum(int passportNum)
+    {
+        this.passportNum = passportNum;
+    }
 
-    public String getEmail() {
+    public String getEmail() 
+    {
         return email;
     }
 
+    public void setEmail(String email)
+    {
+        this.email = email;
+    }
 }
