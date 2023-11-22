@@ -9,6 +9,10 @@ import java.util.List;
 
 public class flightdata {
 
+    
+    /** 
+     * @return List<String>[]
+     */
     public static List<String>[] readExcelData() {
         try {
             // Load the Excel file
@@ -61,6 +65,13 @@ public class flightdata {
         }
     }
     
+    
+    /** 
+     * @param dataColumns
+     * @param target
+     * @param col
+     * @return List<Integer>
+     */
     //reads through the given array in the list to find the traget item
     public static List<Integer> findIndices(List<String>[] dataColumns, String target, int col) {
         List<Integer> indices = new ArrayList<>();

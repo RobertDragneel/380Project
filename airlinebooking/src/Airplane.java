@@ -18,11 +18,19 @@ public class Airplane
         this.arrivalTime = arrivalTime;
     }
 
+    
+    /** 
+     * @return int
+     */
     public int getFlightNumber()
     {
         return flightNumber;
     }
 
+    
+    /** 
+     * @param flightNumber
+     */
     public void setFlightNumber(int flightNumber)
     {
         this.flightNumber = flightNumber;
