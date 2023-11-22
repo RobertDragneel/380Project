@@ -1,8 +1,19 @@
+package AARCodeBros;
+
 // Using Java AWT for the GUI
 import java.awt.*;
 import java.awt.event.*;
 
+/**
+* @author Angelo
+*/
+
 public class GUI {
+
+    /**
+    * The GUI class generates a GUI for the user to use the reservation app. 
+    */
+
     private Frame startingWindow; // Frame to establish a window
     // Choice to make a pop-up menu for location options
     private Choice origin;
