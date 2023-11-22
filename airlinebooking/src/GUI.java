@@ -1,5 +1,3 @@
-package AARCodeBros;
-
 // Using Java AWT for the GUI
 import java.awt.*;
 import java.awt.event.*;
