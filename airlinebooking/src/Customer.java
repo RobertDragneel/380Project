@@ -22,19 +22,11 @@ public class Customer {
         this.email = email;
     } //likely wont need this as customer will be created then variables set after (keeping incase)
     
-    
-    /** 
-     * @return String
-     */
     public String getName() 
     {
         return name;
     }
 
-    
-    /** 
-     * @param name
-     */
     public void setName(String name)
     {
         this.name = name;
