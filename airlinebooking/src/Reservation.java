@@ -2,9 +2,9 @@ public class Reservation {
 
     public void createCustomer()
     {
-        
+        Customer newCustomer = new Customer();
     }
-
+    
 
     public void search() {
         //For searching flights
