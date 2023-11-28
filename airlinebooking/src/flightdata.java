@@ -60,15 +60,37 @@ public class flightdata {
             return null;
         }
     }
-     
+    
+    //reads through the given array in the list to find the traget item
+    public static List<Integer> findIndices(List<String>[] dataColumns, String target, int col) {
+        List<Integer> indices = new ArrayList<>();
+
+        for (int i = 0; i < dataColumns[col].size(); i++) {
+            if (dataColumns[col].get(i).equals(target)) {
+                indices.add(i);
+            }
+        }
+
+        return indices;
+    }
+
+    //this is used for testing
     /*public static void main(String[] args) {
         List<String>[] dataColumns = readExcelData();
 
+        String targetItem = "American Airlines";
+        List<Integer> occurrences = findIndices(dataColumns, targetItem, 0);
+        if (occurrences.isEmpty()) {
+            System.out.println("Item not found in the list.");
+        } else {
+            System.out.println("The item '" + targetItem + "' is found at indices: " + occurrences);
+        }
+
+        String name = "American Airlines";
         if (dataColumns != null) {
-            // You can now access the data in each column array
-            for (int col = 0; col < dataColumns.length; col++) {
-                System.out.println("Column " + (col + 1) + ": " + dataColumns[col]);
-            }
+            int i = dataColumns[0].indexOf(name);
+            System.out.println(dataColumns[0].indexOf(name));
+            System.out.println(dataColumns[0].get(i));
         }
     }*/
 }
