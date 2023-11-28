@@ -14,22 +14,16 @@ public class GUI {
 
     private Frame startingWindow; // Frame to establish a window
     // Choice to make a pop-up menu for location options
-    private Choice origin;
-    private Choice destination;
+    private TextField origin;
+    private TextField destination;
     private Button search; // Button to make, well, a button
 
     public GUI() {
         startingWindow = new Frame("Flight Reservation");
-        origin = new Choice(); 
-        destination  = new Choice();
+        origin = new TextField("", 15); 
+        destination  = new TextField("", 15);
         search = new Button("Search");
         Label blankLabel = new Label(" ");
-
-        // Adding origin options
-        origin.add("CDG - Paris, France");
-
-        // Adding destination options
-        destination.add("JFK - New York City, New York");
 
         // GrideBagLayout used to organize elements
         startingWindow.setLayout(new GridBagLayout());
@@ -75,8 +69,8 @@ public class GUI {
         search.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 // Displays new frame (aka window) showing flights
-                String originChoice = origin.getSelectedItem();
-                String destinationChoice = destination.getSelectedItem();
+                String originChoice = origin.getText();
+                String destinationChoice = destination.getText();
                 Frame searchingFrame = new Frame("Flight Searching");
                 Label searchingLabel = new Label("Searching flights from (Origin: " + originChoice + ") to (Destination: " + destinationChoice + ")...");
                 Label blankLabel = new Label(" ");
