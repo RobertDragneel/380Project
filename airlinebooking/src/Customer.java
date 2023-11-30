@@ -1,4 +1,3 @@
-import java.time.LocalDate;
 
 public class Customer {
     
@@ -20,7 +19,7 @@ public class Customer {
         this.dob = dob;
         this.passportNum = passportNum;
         this.email = email;
-    } //likely wont need this as customer will be created then variables set after (keeping incase)
+    }
     
     public String getName() 
     {
