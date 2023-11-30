@@ -74,23 +74,56 @@ public class flightdata {
         return indices;
     }
 
+    public static List<String> search(String search1, String search2){
+        String input1 = search1;
+        String input2 = search2;
+        String searchResult = "Item not found in the list.";
+        List<String>[] dataColumns = readExcelData();
+        List<Integer> occurrences1 = findIndices(dataColumns, input1 , 2);
+        List<Integer> occurrences2 = findIndices(dataColumns, input2 , 2);
+        List<String> newdata = new ArrayList<>();
+
+        if (occurrences1.isEmpty()) {
+            return null;
+        }
+        else{
+
+            String test = "";
+            for (int i = 0; i < occurrences1.size(); i++) {    
+                for(int j = 7; j >= 0; j--){
+                    test = dataColumns[j].get(occurrences1.get(i)) + " " + test;
+                }
+                newdata.add(test);
+                test = "";
+            } 
+        }
+
+        return newdata;
+    }
+
     //this is used for testing
     /*public static void main(String[] args) {
-        List<String>[] dataColumns = readExcelData();
 
-        String targetItem = "American Airlines";
-        List<Integer> occurrences = findIndices(dataColumns, targetItem, 0);
+        List<String> test = printdata("Los Angeles International Airport (LAX)", null);
+        for (int i = 0; i < test.size(); i++) {
+            System.out.println(test.get(i));
+        }
+        
+
+         List<String>[] dataColumns = readExcelData();
+
+        String targetItem = "Los Angeles International Airport (LAX)";
+        List<Integer> occurrences = findIndices(dataColumns, targetItem, 2);
         if (occurrences.isEmpty()) {
             System.out.println("Item not found in the list.");
         } else {
             System.out.println("The item '" + targetItem + "' is found at indices: " + occurrences);
         }
 
-        String name = "American Airlines";
-        if (dataColumns != null) {
-            int i = dataColumns[0].indexOf(name);
-            System.out.println(dataColumns[0].indexOf(name));
-            System.out.println(dataColumns[0].get(i));
-        }
-    }*/
+        for(int i = 0; i < occurrences.size(); i++){
+            for(int j = 0; j < 8; j++){
+                System.out.println(dataColumns[j].get(occurrences.get(i)));
+            }
+        }*/
+    }
 }
