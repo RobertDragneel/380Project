@@ -12,7 +12,7 @@ public class flightdata {
     public static List<String>[] readExcelData() {
         try {
             // Load the Excel file
-            FileInputStream fis = new FileInputStream("C:\\\\Users\\\\alonn\\\\OneDrive\\\\Desktop\\\\380\\\\380Project\\\\flight_list.xlsx");
+            FileInputStream fis = new FileInputStream("C:\\Users\\teody\\OneDrive\\Desktop\\VS Code\\Comp 380\\380Project\\flight_list.xlsx");
             Workbook workbook = new XSSFWorkbook(fis);
 
             // Get the first sheet in the workbook (you can specify a different sheet if needed)
@@ -124,6 +124,6 @@ public class flightdata {
             for(int j = 0; j < 8; j++){
                 System.out.println(dataColumns[j].get(occurrences.get(i)));
             }
-        }*/
-    }
+        }
+    }*/
 }

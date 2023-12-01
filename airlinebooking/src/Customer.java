@@ -1,43 +1,54 @@
-import java.time.LocalDate;
-
 public class Customer {
     
-    private String name;
-    private LocalDate dob;
+    private String first_name;
+    private String last_name;
+    private String dob;
     private int passportNum;
     private String email;
 
     public Customer() //default constructor
     {
-        this.name = "N/A";
-        this.dob = dob.now();
+        this.first_name = "test";
+        this.last_name = "test";
+        this.dob = "test";
         this.passportNum = 0;
-        this.email = "N/A";
+        this.email = "test";
         
     }
-    public Customer(String name, LocalDate dob, int passportNum, String email) {
-        this.name = name;
+    public Customer(String first_name, String last_name, String dob, int passportNum, String email) {
+        this.first_name = first_name;
+        this.last_name = last_name;
         this.dob = dob;
         this.passportNum = passportNum;
         this.email = email;
     } //likely wont need this as customer will be created then variables set after (keeping incase)
     
-    public String getName() 
+    public String getfirst_name() 
     {
-        return name;
+        return first_name;
     }
 
-    public void setName(String name)
+    public void setfirst_name(String first_name)
     {
-        this.name = name;
+        this.first_name = first_name;
     }
 
-    public LocalDate getDob() 
+    public String getlast_name() 
+    {
+        return last_name;
+    }
+
+    public void setlast_name(String last_name)
+    {
+        this.last_name = last_name;
+    }
+
+    public String getDob() 
     {
         return dob;
     }
 
-    public void setDob(LocalDate dob)
+    public void setDob(String dob)
     {
         this.dob = dob;
     }
