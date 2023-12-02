@@ -134,11 +134,11 @@ public class GUI {
                         dobLabel = new Label("Date of Birth: ");
                         passportLabel = new Label("Passport #: ");
 
-                        firstName = new TextField("", 15);
-                        lastName = new TextField("", 15);
-                        email = new TextField("", 15);
-                        dob = new TextField("", 15);
-                        passportNum = new TextField("", 15);
+                        firstName = new TextField("Enter Here", 15);
+                        lastName = new TextField("Enter Here", 15);
+                        email = new TextField("Enter Here", 15);
+                        dob = new TextField("Enter Here", 15);
+                        passportNum = new TextField("000000000", 15);
 
                         // GrideBagLayout used to organize elements
                         reservationFrame.setLayout(new GridBagLayout());
@@ -196,6 +196,11 @@ public class GUI {
                         reservationFrame.setBackground(Color.getHSBColor(207f/360f, (float) 0.54, (float) 0.87)); // Sets background color of window
                         reservationFrame.setVisible(true);
                         reservationFrame.setExtendedState(Frame.MAXIMIZED_BOTH); // Maxizes window screen size
+
+                        // Obtains what was written in passport number text field and converted to an int
+                        String getPassportNum = passportNum.getText();
+                        int passportNumber = Integer.parseInt(getPassportNum);
+                        Customer buyer = new Customer(firstName.getText(), lastName.getText(), dob.getText(), passportNumber, email.getText());
 
                         // Allows reservationFrame to be closed
                         reservationFrame.addWindowListener(new WindowAdapter() {
