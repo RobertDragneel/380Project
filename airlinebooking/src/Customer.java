@@ -1,44 +1,27 @@
-<<<<<<< HEAD
 public class Customer {
     
     private String first_name;
     private String last_name;
-=======
-
-public class Customer {
-    
-    private String name;
->>>>>>> main
     private String dob;
     private int passportNum;
     private String email;
 
     public Customer() //default constructor
     {
-<<<<<<< HEAD
         this.first_name = "test";
         this.last_name = "test";
         this.dob = "test";
-=======
-        this.name = "N/A";
-        this.dob = "00/00";
->>>>>>> main
         this.passportNum = 0;
         this.email = "test";
         
     }
-<<<<<<< HEAD
     public Customer(String first_name, String last_name, String dob, int passportNum, String email) {
         this.first_name = first_name;
         this.last_name = last_name;
-=======
-    public Customer(String name, String dob, int passportNum, String email) {
-        this.name = name;
->>>>>>> main
         this.dob = dob;
         this.passportNum = passportNum;
         this.email = email;
-    }
+    } //likely wont need this as customer will be created then variables set after (keeping incase)
     
     public String getfirst_name() 
     {
@@ -50,7 +33,6 @@ public class Customer {
         this.first_name = first_name;
     }
 
-<<<<<<< HEAD
     public String getlast_name() 
     {
         return last_name;
@@ -61,8 +43,6 @@ public class Customer {
         this.last_name = last_name;
     }
 
-=======
->>>>>>> main
     public String getDob() 
     {
         return dob;
