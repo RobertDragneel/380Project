@@ -1,40 +1,23 @@
-<<<<<<< HEAD
-
-public class Customer {
-    
-    private String name;
-=======
 public class Customer {
     
     private String first_name;
     private String last_name;
->>>>>>> APBranch
     private String dob;
     private int passportNum;
     private String email;
 
     public Customer() //default constructor
     {
-<<<<<<< HEAD
-        this.name = "N/A";
-        this.dob = "00/00";
-=======
         this.first_name = "test";
         this.last_name = "test";
         this.dob = "test";
->>>>>>> APBranch
         this.passportNum = 0;
         this.email = "test";
         
     }
-<<<<<<< HEAD
-    public Customer(String name, String dob, int passportNum, String email) {
-        this.name = name;
-=======
     public Customer(String first_name, String last_name, String dob, int passportNum, String email) {
         this.first_name = first_name;
         this.last_name = last_name;
->>>>>>> APBranch
         this.dob = dob;
         this.passportNum = passportNum;
         this.email = email;
@@ -50,8 +33,6 @@ public class Customer {
         this.first_name = first_name;
     }
 
-<<<<<<< HEAD
-=======
     public String getlast_name() 
     {
         return last_name;
@@ -62,7 +43,6 @@ public class Customer {
         this.last_name = last_name;
     }
 
->>>>>>> APBranch
     public String getDob() 
     {
         return dob;

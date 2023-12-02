@@ -1,11 +1,11 @@
 public class Reservation {
 
-    String name, email, dob;
+    String first_name, last_name, email, dob;
     int passportNum;
     public void createCustomer()
     {
         
-        Customer newCustomer = new Customer(name, dob, passportNum, email);
+        Customer newCustomer = new Customer(first_name, last_name, dob, passportNum, email);
     }
     
     /* public void setCustomerInfo(String name)
