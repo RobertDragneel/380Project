@@ -1,19 +1,13 @@
 public class Reservation {
 
+
     String first_name, last_name, email, dob;
     int passportNum;
     public void createCustomer()
     {
-        
         Customer newCustomer = new Customer(first_name, last_name, dob, passportNum, email);
     }
     
-    /* public void setCustomerInfo(String name)
-    {
-        createCustomer();
-        newCustomer.setName()=name;
-    } */
-
     public void search() {
         //For searching flights
     }
