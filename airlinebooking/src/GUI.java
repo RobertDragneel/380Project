@@ -20,8 +20,8 @@ public class GUI {
 
     public GUI() {
         startingWindow = new Frame("Flight Reservation");
-        origin = new TextField("", 15); 
-        destination  = new TextField("", 15);
+        origin = new TextField(15); 
+        destination  = new TextField(15);
         search = new Button("Search");
         Label blankLabel = new Label(" ");
 
