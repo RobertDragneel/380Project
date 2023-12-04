@@ -134,10 +134,10 @@ public class GUI {
                         dobLabel = new Label("Date of Birth: ");
                         passportLabel = new Label("Passport #: ");
 
-                        firstName = new TextField("Enter Here", 15);
-                        lastName = new TextField("Enter Here", 15);
-                        email = new TextField("Enter Here", 15);
-                        dob = new TextField("Enter Here", 15);
+                        firstName = new TextField(15);
+                        lastName = new TextField(15);
+                        email = new TextField(15);
+                        dob = new TextField(15);
                         passportNum = new TextField("000000000", 15);
 
                         // GrideBagLayout used to organize elements
@@ -212,6 +212,36 @@ public class GUI {
                         completeButton.addActionListener(new ActionListener() {
                             public void actionPerformed(ActionEvent e) {
                                 Frame reviewFrame = new Frame("Review Reservation");
+                                Label overviewTitle = new Label("Reservation Review: ");
+                                Label overviewName = new Label("Name - " + buyer.getfirst_name() + " " + buyer.getlast_name());
+                                Label overviewEmail = new Label("Email - " + buyer.getEmail());
+                                Label overviewDOB = new Label("Date of Birth - " + buyer.getDob());
+                                Label overviewPassport = new Label("Passport Number - " + buyer.getPassportNum());
+
+                                // GrideBagLayout used to organize elements
+                                reviewFrame.setLayout(new GridBagLayout());
+                                GridBagConstraints gbc_flightReview = new GridBagConstraints();
+
+                                // Organizes the elements through the coordinates
+                                gbc_flightReview.gridx = 0;
+                                gbc_flightReview.gridy = 0;
+                                reviewFrame.add(overviewTitle, gbc_flightReview);
+
+                                gbc_flightReview.gridx = 0;
+                                gbc_flightReview.gridy = 1;
+                                reviewFrame.add(overviewName, gbc_flightReview);
+
+                                gbc_flightReview.gridx = 0;
+                                gbc_flightReview.gridy = 2;
+                                reviewFrame.add(overviewEmail, gbc_flightReview);
+
+                                gbc_flightReview.gridx = 0;
+                                gbc_flightReview.gridy = 3;
+                                reviewFrame.add(overviewDOB, gbc_flightReview);
+
+                                gbc_flightReview.gridx = 0;
+                                gbc_flightReview.gridy = 4;
+                                reviewFrame.add(overviewPassport, gbc_flightReview);
 
                                 reviewFrame.setBackground(Color.getHSBColor(207f/360f, (float) 0.54, (float) 0.87)); // Sets background color of window
                                 reviewFrame.setVisible(true);
