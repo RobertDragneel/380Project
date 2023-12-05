@@ -79,10 +79,11 @@ public class GUI {
 
                 /*
                 // Gets flight data from flightdata class
-                String flights = flightdata.readExcelSheet();
-                Label flightsList = new Label(flights);
-                 */
- 
+                List<String> flights = flightdata.combine(originChoice, destinationChoice);
+                String flighChoices = String.join(", ", flights);
+                Label flightsList = new Label(flighChoices);
+                */
+
 
                 // GrideBagLayout used to organize elements
                 searchingFrame.setLayout(new GridBagLayout());
@@ -101,11 +102,11 @@ public class GUI {
                 */
 
                 gbc_flightSearch.gridx = 0;
-                gbc_flightSearch.gridy = 1;
+                gbc_flightSearch.gridy = 2;
                 searchingFrame.add(blankLabel, gbc_flightSearch);
 
                 gbc_flightSearch.gridx = 0;
-                gbc_flightSearch.gridy = 2;
+                gbc_flightSearch.gridy = 3;
                 searchingFrame.add(reserveButton, gbc_flightSearch);
 
                 searchingFrame.setBackground(Color.getHSBColor(207f/360f, (float) 0.54, (float) 0.87)); // Sets background color of window
