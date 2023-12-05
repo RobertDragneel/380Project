@@ -1,6 +1,7 @@
 // Using Java AWT for the GUI
 import java.awt.*;
 import java.awt.event.*;
+import java.util.List;
 
 /**
 * @author Angelo
@@ -77,12 +78,12 @@ public class GUI {
                 Button reserveButton = new Button("Reserve");
 
 
-                /*
+                
                 // Gets flight data from flightdata class
                 List<String> flights = flightdata.combine(originChoice, destinationChoice);
-                String flighChoices = String.join(", ", flights);
-                Label flightsList = new Label(flighChoices);
-                */
+                String flightChoices = String.join(", ", flights);
+                Label flightsList = new Label(flightChoices);
+                
 
 
                 // GrideBagLayout used to organize elements
@@ -95,11 +96,11 @@ public class GUI {
                 searchingFrame.add(searchingLabel, gbc_flightSearch);
 
 
-                /*
+                
                 gbc_flightSearch.gridx = 0;
                 gbc_flightSearch.gridy = 1;
                 searchingFrame.add(flightsList, gbc_flightSearch);
-                */
+                
 
                 gbc_flightSearch.gridx = 0;
                 gbc_flightSearch.gridy = 2;
