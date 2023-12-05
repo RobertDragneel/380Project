@@ -138,7 +138,7 @@ public class GUI {
                         lastName = new TextField(15);
                         email = new TextField(15);
                         dob = new TextField(15);
-                        passportNum = new TextField("000000000", 15);
+                        passportNum = new TextField(15);
 
                         // GrideBagLayout used to organize elements
                         reservationFrame.setLayout(new GridBagLayout());
@@ -197,11 +197,6 @@ public class GUI {
                         reservationFrame.setVisible(true);
                         reservationFrame.setExtendedState(Frame.MAXIMIZED_BOTH); // Maxizes window screen size
 
-                        // Obtains what was written in passport number text field and converted to an int
-                        String getPassportNum = passportNum.getText();
-                        int passportNumber = Integer.parseInt(getPassportNum);
-                        Customer buyer = new Customer(firstName.getText(), lastName.getText(), dob.getText(), passportNumber, email.getText());
-
                         // Allows reservationFrame to be closed
                         reservationFrame.addWindowListener(new WindowAdapter() {
                             public void windowClosing(WindowEvent e) {
@@ -213,10 +208,15 @@ public class GUI {
                             public void actionPerformed(ActionEvent e) {
                                 Frame reviewFrame = new Frame("Review Reservation");
                                 Label overviewTitle = new Label("Reservation Review: ");
-                                Label overviewName = new Label("Name - " + buyer.getfirst_name() + " " + buyer.getlast_name());
-                                Label overviewEmail = new Label("Email - " + buyer.getEmail());
-                                Label overviewDOB = new Label("Date of Birth - " + buyer.getDob());
-                                Label overviewPassport = new Label("Passport Number - " + buyer.getPassportNum());
+                                String reviewFirstName = firstName.getText();
+                                String reviewLastName = lastName.getText();
+                                Label overviewName = new Label("Name - " + reviewFirstName + " " + reviewLastName);
+                                String reviewEmail = email.getText();
+                                Label overviewEmail = new Label("Email - " + reviewEmail);
+                                String reviewDOB = dob.getText();
+                                Label overviewDOB = new Label("Date of Birth - " + reviewDOB);
+                                String reviewPassportNum = passportNum.getText();
+                                Label overviewPassport = new Label("Passport Number - " + reviewPassportNum);
 
                                 // GrideBagLayout used to organize elements
                                 reviewFrame.setLayout(new GridBagLayout());
