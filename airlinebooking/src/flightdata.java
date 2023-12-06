@@ -192,7 +192,7 @@ public class flightdata {
     }
 
     //this is used for testing
-    /*public static void main(String[] args) {
+    public static void main(String[] args) {
 
         List<String> test2 = flightnumbersearch("WN789");
         for (int i = 0; i < test2.size(); i++) {
@@ -200,7 +200,7 @@ public class flightdata {
         }
 
         
-        List<String> test = combine("Los Angeles International Airport (LAX)", "John F. Kennedy International Airport (JFK)");
+        List<String> test = filter("Los Angeles International Airport (LAX)", "John F. Kennedy International Airport (JFK)");
         for (int i = 0; i < test.size(); i++) {
             System.out.println(test.get(i));
         }
@@ -221,5 +221,5 @@ public class flightdata {
                 System.out.println(dataColumns[j].get(occurrences.get(i)));
             }
         }
-    }*/
+    }
 }
