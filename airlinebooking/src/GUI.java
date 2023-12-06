@@ -1,6 +1,7 @@
 // Using Java AWT for the GUI
 import java.awt.*;
 import java.awt.event.*;
+import java.util.List;
 
 /**
 * @author Angelo
@@ -20,8 +21,8 @@ public class GUI {
 
     public GUI() {
         startingWindow = new Frame("Flight Reservation");
-        origin = new TextField("", 15); 
-        destination  = new TextField("", 15);
+        origin = new TextField(15); 
+        destination  = new TextField(15);
         search = new Button("Search");
         Label blankLabel = new Label(" ");
 
@@ -77,12 +78,13 @@ public class GUI {
                 Button reserveButton = new Button("Reserve");
 
 
-                /*
+                
                 // Gets flight data from flightdata class
-                String flights = flightdata.readExcelSheet();
-                Label flightsList = new Label(flights);
-                 */
- 
+                List<String> flights = flightdata.combine(originChoice, destinationChoice);
+                String flightChoices = String.join(", ", flights);
+                Label flightsList = new Label(flightChoices);
+                
+
 
                 // GrideBagLayout used to organize elements
                 searchingFrame.setLayout(new GridBagLayout());
@@ -94,18 +96,18 @@ public class GUI {
                 searchingFrame.add(searchingLabel, gbc_flightSearch);
 
 
-                /*
+                
                 gbc_flightSearch.gridx = 0;
                 gbc_flightSearch.gridy = 1;
                 searchingFrame.add(flightsList, gbc_flightSearch);
-                */
-
-                gbc_flightSearch.gridx = 0;
-                gbc_flightSearch.gridy = 1;
-                searchingFrame.add(blankLabel, gbc_flightSearch);
+                
 
                 gbc_flightSearch.gridx = 0;
                 gbc_flightSearch.gridy = 2;
+                searchingFrame.add(blankLabel, gbc_flightSearch);
+
+                gbc_flightSearch.gridx = 0;
+                gbc_flightSearch.gridy = 3;
                 searchingFrame.add(reserveButton, gbc_flightSearch);
 
                 searchingFrame.setBackground(Color.getHSBColor(207f/360f, (float) 0.54, (float) 0.87)); // Sets background color of window
@@ -134,11 +136,11 @@ public class GUI {
                         dobLabel = new Label("Date of Birth: ");
                         passportLabel = new Label("Passport #: ");
 
-                        firstName = new TextField("Enter Here", 15);
-                        lastName = new TextField("Enter Here", 15);
-                        email = new TextField("Enter Here", 15);
-                        dob = new TextField("Enter Here", 15);
-                        passportNum = new TextField("000000000", 15);
+                        firstName = new TextField(15);
+                        lastName = new TextField(15);
+                        email = new TextField(15);
+                        dob = new TextField(15);
+                        passportNum = new TextField(15);
 
                         // GrideBagLayout used to organize elements
                         reservationFrame.setLayout(new GridBagLayout());
@@ -197,11 +199,6 @@ public class GUI {
                         reservationFrame.setVisible(true);
                         reservationFrame.setExtendedState(Frame.MAXIMIZED_BOTH); // Maxizes window screen size
 
-                        // Obtains what was written in passport number text field and converted to an int
-                        String getPassportNum = passportNum.getText();
-                        int passportNumber = Integer.parseInt(getPassportNum);
-                        Customer buyer = new Customer(firstName.getText(), lastName.getText(), dob.getText(), passportNumber, email.getText());
-
                         // Allows reservationFrame to be closed
                         reservationFrame.addWindowListener(new WindowAdapter() {
                             public void windowClosing(WindowEvent e) {
@@ -212,6 +209,41 @@ public class GUI {
                         completeButton.addActionListener(new ActionListener() {
                             public void actionPerformed(ActionEvent e) {
                                 Frame reviewFrame = new Frame("Review Reservation");
+                                Label overviewTitle = new Label("Reservation Review: ");
+                                String reviewFirstName = firstName.getText();
+                                String reviewLastName = lastName.getText();
+                                Label overviewName = new Label("Name - " + reviewFirstName + " " + reviewLastName);
+                                String reviewEmail = email.getText();
+                                Label overviewEmail = new Label("Email - " + reviewEmail);
+                                String reviewDOB = dob.getText();
+                                Label overviewDOB = new Label("Date of Birth - " + reviewDOB);
+                                String reviewPassportNum = passportNum.getText();
+                                Label overviewPassport = new Label("Passport Number - " + reviewPassportNum);
+
+                                // GrideBagLayout used to organize elements
+                                reviewFrame.setLayout(new GridBagLayout());
+                                GridBagConstraints gbc_flightReview = new GridBagConstraints();
+
+                                // Organizes the elements through the coordinates
+                                gbc_flightReview.gridx = 0;
+                                gbc_flightReview.gridy = 0;
+                                reviewFrame.add(overviewTitle, gbc_flightReview);
+
+                                gbc_flightReview.gridx = 0;
+                                gbc_flightReview.gridy = 1;
+                                reviewFrame.add(overviewName, gbc_flightReview);
+
+                                gbc_flightReview.gridx = 0;
+                                gbc_flightReview.gridy = 2;
+                                reviewFrame.add(overviewEmail, gbc_flightReview);
+
+                                gbc_flightReview.gridx = 0;
+                                gbc_flightReview.gridy = 3;
+                                reviewFrame.add(overviewDOB, gbc_flightReview);
+
+                                gbc_flightReview.gridx = 0;
+                                gbc_flightReview.gridy = 4;
+                                reviewFrame.add(overviewPassport, gbc_flightReview);
 
                                 reviewFrame.setBackground(Color.getHSBColor(207f/360f, (float) 0.54, (float) 0.87)); // Sets background color of window
                                 reviewFrame.setVisible(true);
