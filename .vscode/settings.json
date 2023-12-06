@@ -50,7 +50,6 @@
             "apache-log4j-2.22.0-bin/log4j-spring-boot-2.22.0.jar",
             "apache-log4j-2.22.0-bin/log4j-spring-cloud-config-client-2.22.0.jar",
             "apache-log4j-2.22.0-bin/log4j-taglib-2.22.0.jar",
-            "apache-log4j-2.22.0-bin/log4j-to-jul-2.22.0.jar",
             "apache-log4j-2.22.0-bin/log4j-to-slf4j-2.22.0.jar",
             "apache-log4j-2.22.0-bin/log4j-web-2.22.0.jar"
         ]
