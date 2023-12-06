@@ -13,7 +13,7 @@ public class flightdata {
     public static List<String>[] readExcelData() {
         try {
             // Load the Excel file
-            FileInputStream fis = new FileInputStream("C:\\Users\\pinoy\\Desktop\\CSUN\\COMP 380\\380Project\\flight_list.xlsx");
+            FileInputStream fis = new FileInputStream("C:\\Users\\alonn\\OneDrive\\Desktop\\380\\380Project/flight_list.xlsx");
             Workbook workbook = new XSSFWorkbook(fis);
 
             // Get the first sheet in the workbook (you can specify a different sheet if needed)
@@ -139,22 +139,29 @@ public class flightdata {
         List<String> results1 = searchorigin(origin);
         List<String> results2 = searchdestination(destination);
 
-        //checks if input1 and 2 had any of the same flights if input 1 has more or they have an equal number flights
-        if(results1.size() >= results2.size()){
-            for(int i = 0; i < results1.size(); i ++){
-                for(int j = 0; j < results2.size(); j++){
-                    if (results1.get(i).equals(results2.get(j))) {
-                        samedata.add(results1.get(i));
-                    }
-                }
-            }
+        if (results1 == null || results2 == null){
+
+            samedata.add("No matching flights found");
         }
-        //checks if input1 and 2 had any of the same flights if input 2 has more flights
+
         else{
-            for(int i = 0; i < results2.size(); i ++){
-                for(int j = 0; j < results1.size(); j++){
-                    if (results2.get(i).equals(results1.get(j))) {
-                        samedata.add(results2.get(i));
+            //checks if input1 and 2 had any of the same flights if input 1 has more or they have an equal number flights
+            if(results1.size() >= results2.size()){
+                for(int i = 0; i < results1.size(); i ++){
+                    for(int j = 0; j < results2.size(); j++){
+                        if (results1.get(i).equals(results2.get(j))) {
+                            samedata.add(results1.get(i));
+                        }
+                    }
+            }   
+            }
+            //checks if input1 and 2 had any of the same flights if input 2 has more flights
+            else{
+                for(int i = 0; i < results2.size(); i ++){
+                    for(int j = 0; j < results1.size(); j++){
+                        if (results2.get(i).equals(results1.get(j))) {
+                            samedata.add(results2.get(i));
+                        }
                     }
                 }
             }
@@ -200,7 +207,7 @@ public class flightdata {
         }
 
         
-        List<String> test = combine("Los Angeles International Airport (LAX)", "John F. Kennedy International Airport (JFK)");
+        List<String> test = filter("Los Angeles International Airport (LAX)", "asdasd");
         for (int i = 0; i < test.size(); i++) {
             System.out.println(test.get(i));
         }
