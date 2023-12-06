@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+@Test
 public class flightdata {
     
     public static List<String>[] readExcelData() {
@@ -74,9 +75,9 @@ public class flightdata {
         return indices;
     }
 
-    public static List<String> search1(String string1){
+    public static List<String> searchorigin(String origin){
         //setting vars and lists
-        String input1 = string1;
+        String input1 = origin;
         List<String> searchdata = new ArrayList<>();
         
         //calling the methods that are needed
@@ -103,9 +104,9 @@ public class flightdata {
         return searchdata;
     }
 
-    public static List<String> search2(String string2){
+    public static List<String> searchdestination(String destination){
         //setting vars and lists
-        String input1 = string2;
+        String input1 = destination;
         List<String> searchdata = new ArrayList<>();
         
         //calling the methods that are needed
@@ -132,11 +133,11 @@ public class flightdata {
         return searchdata;
     }
 
-    public static List<String> combine(String string1, String string2){
+    public static List<String> filter(String origin, String destination){
 
         List<String> samedata = new ArrayList<>();
-        List<String> results1 = search1(string1);
-        List<String> results2 = search2(string2);
+        List<String> results1 = searchorigin(origin);
+        List<String> results2 = searchdestination(destination);
 
         //checks if input1 and 2 had any of the same flights if input 1 has more or they have an equal number flights
         if(results1.size() >= results2.size()){
@@ -162,8 +163,42 @@ public class flightdata {
         return samedata;
     }
 
+    public static List<String> flightnumbersearch(String flightnumber){
+        //setting vars and lists
+        List<String> searchdata = new ArrayList<>();
+        
+        //calling the methods that are needed
+        List<String>[] dataColumns = readExcelData();
+        List<Integer> occurrences = findIndices(dataColumns, flightnumber , 1);
+
+        //if the input is not found nothing will return
+        if (occurrences.isEmpty()) {
+            return null;
+        }
+        //if found start putting the found data into a list
+        else{
+
+            //input search
+            for (int i = 0; i < occurrences.size(); i++) {   
+                String combString = ""; 
+                for(int j = 7; j >= 0; j--){
+                    combString = dataColumns[j].get(occurrences.get(i)) + " " + combString;
+                }
+                searchdata.add(combString);
+            } 
+        }
+
+        return searchdata;
+    }
+
     //this is used for testing
     /*public static void main(String[] args) {
+
+        List<String> test2 = flightnumbersearch("WN789");
+        for (int i = 0; i < test2.size(); i++) {
+            System.out.println(test2.get(i));
+        }
+
         
         List<String> test = combine("Los Angeles International Airport (LAX)", "John F. Kennedy International Airport (JFK)");
         for (int i = 0; i < test.size(); i++) {
