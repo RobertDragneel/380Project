@@ -80,7 +80,7 @@ public class GUI {
 
                 
                 // Gets flight data from flightdata class
-                List<String> flights = flightdata.combine(originChoice, destinationChoice);
+                List<String> flights = flightdata.filter(originChoice, destinationChoice);
                 String flightChoices = String.join(", ", flights);
                 Label flightsList = new Label(flightChoices);
                 
