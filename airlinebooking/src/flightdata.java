@@ -199,7 +199,8 @@ public class flightdata {
     }
 
     //this is used for testing
-    /*public static void main(String[] args) {
+    /* 
+    public static void main(String[] args) {
 
         List<String> test2 = flightnumbersearch("WN789");
         for (int i = 0; i < test2.size(); i++) {
@@ -210,9 +211,9 @@ public class flightdata {
         List<String> test = filter("Los Angeles International Airport (LAX)", "asdasd");
         for (int i = 0; i < test.size(); i++) {
             System.out.println(test.get(i));
-        }
+        } 
          
-
+  
          List<String>[] dataColumns = readExcelData();
 
         String targetItem = "Los Angeles International Airport (LAX)";
@@ -228,5 +229,6 @@ public class flightdata {
                 System.out.println(dataColumns[j].get(occurrences.get(i)));
             }
         }
-    }*/
+    }
+    */
 }
