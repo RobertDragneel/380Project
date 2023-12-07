@@ -38,7 +38,7 @@ public class flightdata {
                 for (int col = 0; col < numCols; col++) {
                     Cell cell = currentRow.getCell(col);
                     if (cell != null) {
-                        if (col == 5 || col == 7) {
+                        if (col == 4 || col == 6) {
                             // Format date and time values
                             Date dateValue = cell.getDateCellValue();
                             columns[col].add(dateFormat.format(dateValue));
@@ -63,18 +63,22 @@ public class flightdata {
     }
     
     //reads through the given array in the list to find the traget item
-    public static List<Integer> findIndices(List<String>[] dataColumns, String target, int col) {
-        List<Integer> indices = new ArrayList<>();
+    public static List<Integer> findLocation(List<String>[] dataColumns, String substring, int num) {
 
-        for (int i = 0; i < dataColumns[col].size(); i++) {
-            if (dataColumns[col].get(i).equals(target)) {
+        List<Integer> indices = new ArrayList<>();
+        substring = substring.toLowerCase();
+
+        for (int i = 0; i < dataColumns[num].size(); i++) {
+            String str = dataColumns[num].get(i);
+            str = str.toLowerCase();
+            if (str.contains(substring)) {
                 indices.add(i);
             }
         }
-
+            
         return indices;
     }
-
+   
     public static List<String> searchorigin(String origin){
         //setting vars and lists
         String input1 = origin;
@@ -82,7 +86,7 @@ public class flightdata {
         
         //calling the methods that are needed
         List<String>[] dataColumns = readExcelData();
-        List<Integer> occurrences = findIndices(dataColumns, input1 , 2);
+        List<Integer> occurrences = findLocation(dataColumns, input1, 1);
 
         //if the input is not found nothing will return
         if (occurrences.isEmpty()) {
@@ -94,7 +98,7 @@ public class flightdata {
             //input search
             for (int i = 0; i < occurrences.size(); i++) {   
                 String combString = ""; 
-                for(int j = 7; j >= 0; j--){
+                for(int j = 6; j >= 0; j--){
                     combString = dataColumns[j].get(occurrences.get(i)) + " " + combString;
                 }
                 searchdata.add(combString);
@@ -111,7 +115,7 @@ public class flightdata {
         
         //calling the methods that are needed
         List<String>[] dataColumns = readExcelData();
-        List<Integer> occurrences = findIndices(dataColumns, input1 , 3);
+        List<Integer> occurrences = findLocation(dataColumns, input1 , 2);
 
         //if the input is not found nothing will return
         if (occurrences.isEmpty()) {
@@ -123,7 +127,7 @@ public class flightdata {
             //input search
             for (int i = 0; i < occurrences.size(); i++) {   
                 String combString = ""; 
-                for(int j = 7; j >= 0; j--){
+                for(int j = 6; j >= 0; j--){
                     combString = dataColumns[j].get(occurrences.get(i)) + " " + combString;
                 }
                 searchdata.add(combString);
@@ -179,7 +183,7 @@ public class flightdata {
         
         //calling the methods that are needed
         List<String>[] dataColumns = readExcelData();
-        List<Integer> occurrences = findIndices(dataColumns, flightnumber , 1);
+        List<Integer> occurrences = findLocation(dataColumns, flightnumber , 0);
 
         //if the input is not found nothing will return
         if (occurrences.isEmpty()) {
@@ -205,12 +209,11 @@ public class flightdata {
     
     public static void main(String[] args) {
 
-        List<String> test = filter("Los Angeles International Airport (LAX)", "John F. Kennedy International Airport (JFK)");
+        List<String> test = filter("jfk", "lax");
         for (int i = 0; i < test.size(); i++) {
             System.out.println(test.get(i));
-        }
-        
-        /*  
+        }/*
+
         
         List<String> test2 = flightnumbersearch("WN789");
         for (int i = 0; i < test2.size(); i++) {
