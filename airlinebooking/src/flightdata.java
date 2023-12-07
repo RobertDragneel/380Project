@@ -140,11 +140,10 @@ public class flightdata {
         List<String> results2 = searchdestination(destination);
 
         if (results1 == null || results2 == null){
-
             samedata.add("No matching flights found");
         }
 
-        else if (results1 != null && results2 != null){
+        else{
             //checks if input1 and 2 had any of the same flights if input 1 has more or they have an equal number flights
             if(results1.size() >= results2.size()){
                 for(int i = 0; i < results1.size(); i ++){
@@ -156,7 +155,7 @@ public class flightdata {
                 }   
             }
             //checks if input1 and 2 had any of the same flights if input 2 has more flights
-            else{
+            else if(results1.size() < results2.size()){
                 for(int i = 0; i < results2.size(); i ++){
                     for(int j = 0; j < results1.size(); j++){
                         if (results2.get(i).equals(results1.get(j))) {
@@ -166,7 +165,8 @@ public class flightdata {
                 }
             }
         }
-        else{
+
+        if(samedata.isEmpty()){
             samedata.add("No matching flights found");
         }
 
@@ -202,20 +202,20 @@ public class flightdata {
     }
 
     //this is used for testing
-    /* 
+    
     public static void main(String[] args) {
 
+        List<String> test = filter("Los Angeles International Airport (LAX)", "John F. Kennedy International Airport (JFK)");
+        for (int i = 0; i < test.size(); i++) {
+            System.out.println(test.get(i));
+        }
+        
+        /*  
+        
         List<String> test2 = flightnumbersearch("WN789");
         for (int i = 0; i < test2.size(); i++) {
             System.out.println(test2.get(i));
         }
-
-        
-        List<String> test = filter("Los Angeles International Airport (LAX)", "asdasd");
-        for (int i = 0; i < test.size(); i++) {
-            System.out.println(test.get(i));
-        } 
-         
   
          List<String>[] dataColumns = readExcelData();
 
@@ -231,7 +231,7 @@ public class flightdata {
             for(int j = 0; j < 8; j++){
                 System.out.println(dataColumns[j].get(occurrences.get(i)));
             }
-        }
+        }*/
     }
-    */
+    
 }
