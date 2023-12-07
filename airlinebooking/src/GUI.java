@@ -77,15 +77,10 @@ public class GUI {
                 Label blankLabel = new Label(" ");
                 Button reserveButton = new Button("Reserve");
 
-
-                
                 // Gets flight data from flightdata class
                 List<String> flights = flightdata.filter(originChoice, destinationChoice);
                 String flightChoices = String.join(", ", flights);
-                Label flightsList = new Label(flightChoices);
-                
-
-
+                Label flightsList = new Label(flightChoices);        
                 // GrideBagLayout used to organize elements
                 searchingFrame.setLayout(new GridBagLayout());
                 GridBagConstraints gbc_flightSearch = new GridBagConstraints();
@@ -94,13 +89,10 @@ public class GUI {
                 gbc_flightSearch.gridx = 0;
                 gbc_flightSearch.gridy = 0;
                 searchingFrame.add(searchingLabel, gbc_flightSearch);
-
-
                 
                 gbc_flightSearch.gridx = 0;
                 gbc_flightSearch.gridy = 1;
-                searchingFrame.add(flightsList, gbc_flightSearch);
-                
+                searchingFrame.add(flightsList, gbc_flightSearch);    
 
                 gbc_flightSearch.gridx = 0;
                 gbc_flightSearch.gridy = 2;
