@@ -17,7 +17,7 @@ public class flightdata {
     }
 
     public static List<String>[] readExcelData() {
-        try (FileInputStream fis = new FileInputStream("C:\\Users\\alonn\\OneDrive\\Desktop\\380\\380Project\\flight_list.xlsx");
+        try (FileInputStream fis = new FileInputStream("C:\\Users\\pinoy\\Desktop\\CSUN\\COMP 380\\380Project\\flight_list.xlsx");
              Workbook workbook = new XSSFWorkbook(fis)) {
 
             Sheet sheet = workbook.getSheetAt(0);
