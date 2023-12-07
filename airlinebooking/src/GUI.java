@@ -9,7 +9,7 @@ import java.util.List;
 
 public class GUI {
 
-    /**
+    /*
     * The GUI class generates a GUI for the user to use the reservation app. 
     */
 
@@ -21,8 +21,8 @@ public class GUI {
 
     public GUI() {
         startingWindow = new Frame("Flight Reservation");
-        origin = new TextField(40); 
-        destination  = new TextField(40);
+        origin = new TextField(25); 
+        destination  = new TextField(25);
         search = new Button("Search");
         Label blankLabel = new Label(" ");
 
@@ -75,6 +75,7 @@ public class GUI {
                 Frame searchingFrame = new Frame("Flight Searching");
                 Label searchingLabel = new Label("Searching flights from (Origin: " + originChoice + ") to (Destination: " + destinationChoice + ")...");
                 Label blankLabel = new Label(" ");
+                TextField flightChoice = new TextField("Select Flight Number", 15);
                 Button reserveButton = new Button("Reserve");
 
                 // Gets flight data from flightdata class
@@ -100,6 +101,10 @@ public class GUI {
 
                 gbc_flightSearch.gridx = 0;
                 gbc_flightSearch.gridy = 3;
+                searchingFrame.add(flightChoice, gbc_flightSearch);
+
+                gbc_flightSearch.gridx = 0;
+                gbc_flightSearch.gridy = 4;
                 searchingFrame.add(reserveButton, gbc_flightSearch);
 
                 searchingFrame.setBackground(Color.getHSBColor(207f/360f, (float) 0.54, (float) 0.87)); // Sets background color of window
@@ -119,7 +124,7 @@ public class GUI {
                         Frame reservationFrame = new Frame("Flight Reserving");
                         Button completeButton = new Button("Complete");
                         Label blankLabel = new Label(" ");
-                        Label fnLabel, lnLabel, emailLabel, dobLabel, passportLabel;
+                        Label fnLabel, lnLabel, emailLabel, dobLabel, passportLabel, flightReserve;
                         TextField firstName, lastName, email, dob, passportNum;
 
                         fnLabel = new Label("First Name: ");
@@ -127,6 +132,8 @@ public class GUI {
                         emailLabel = new Label("Email: ");
                         dobLabel = new Label("Date of Birth: ");
                         passportLabel = new Label("Passport #: ");
+                        flightReserve = new Label("Chosen Flight: " + flightChoice.getText());
+
 
                         firstName = new TextField(15);
                         lastName = new TextField(15);
@@ -185,6 +192,10 @@ public class GUI {
 
                         gbc_flightReserve.gridx = 1;
                         gbc_flightReserve.gridy = 6;
+                        reservationFrame.add(flightReserve, gbc_flightReserve);
+
+                        gbc_flightReserve.gridx = 1;
+                        gbc_flightReserve.gridy = 7;
                         reservationFrame.add(completeButton, gbc_flightReserve);
 
                         reservationFrame.setBackground(Color.getHSBColor(207f/360f, (float) 0.54, (float) 0.87)); // Sets background color of window
@@ -201,16 +212,20 @@ public class GUI {
                         completeButton.addActionListener(new ActionListener() {
                             public void actionPerformed(ActionEvent e) {
                                 Frame reviewFrame = new Frame("Review Reservation");
-                                Label overviewTitle = new Label("Reservation Review: ");
                                 String reviewFirstName = firstName.getText();
                                 String reviewLastName = lastName.getText();
-                                Label overviewName = new Label("Name - " + reviewFirstName + " " + reviewLastName);
                                 String reviewEmail = email.getText();
-                                Label overviewEmail = new Label("Email - " + reviewEmail);
                                 String reviewDOB = dob.getText();
-                                Label overviewDOB = new Label("Date of Birth - " + reviewDOB);
                                 String reviewPassportNum = passportNum.getText();
+                                Label overviewTitle = new Label("Reservation Review: ");
+                                Label overviewName = new Label("Name - " + reviewFirstName + " " + reviewLastName);
+                                Label overviewEmail = new Label("Email - " + reviewEmail);
+                                Label overviewDOB = new Label("Date of Birth - " + reviewDOB);
                                 Label overviewPassport = new Label("Passport Number - " + reviewPassportNum);
+                                Label overviewFlight = new Label("Flight Details: ");
+                                List<String> chosenFlight = flightdata.flightNumberSearch(flightChoice.getText());
+                                String flightPick = String.join(", ", chosenFlight);
+                                Label flightInfo = new Label(flightPick);  
 
                                 // GrideBagLayout used to organize elements
                                 reviewFrame.setLayout(new GridBagLayout());
@@ -236,6 +251,18 @@ public class GUI {
                                 gbc_flightReview.gridx = 0;
                                 gbc_flightReview.gridy = 4;
                                 reviewFrame.add(overviewPassport, gbc_flightReview);
+
+                                gbc_flightReview.gridx = 0;
+                                gbc_flightReview.gridy = 5;
+                                reviewFrame.add(blankLabel, gbc_flightReview);
+
+                                gbc_flightReview.gridx = 0;
+                                gbc_flightReview.gridy = 6;
+                                reviewFrame.add(overviewFlight, gbc_flightReview);
+
+                                gbc_flightReview.gridx = 0;
+                                gbc_flightReview.gridy = 7;
+                                reviewFrame.add(flightInfo, gbc_flightReview);
 
                                 reviewFrame.setBackground(Color.getHSBColor(207f/360f, (float) 0.54, (float) 0.87)); // Sets background color of window
                                 reviewFrame.setVisible(true);
