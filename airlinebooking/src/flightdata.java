@@ -207,12 +207,12 @@ public class flightdata {
 
     //this is used for testing
     
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
 
         List<String> test = filter("jfk", "lax");
         for (int i = 0; i < test.size(); i++) {
             System.out.println(test.get(i));
-        }/*
+        }
 
         
         List<String> test2 = flightnumbersearch("WN789");
@@ -234,7 +234,7 @@ public class flightdata {
             for(int j = 0; j < 8; j++){
                 System.out.println(dataColumns[j].get(occurrences.get(i)));
             }
-        }*/
-    }
+        }
+    }*/
     
 }
