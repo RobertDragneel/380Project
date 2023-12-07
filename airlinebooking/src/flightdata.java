@@ -195,7 +195,7 @@ public class flightdata {
             //input search
             for (int i = 0; i < occurrences.size(); i++) {   
                 String combString = ""; 
-                for(int j = 7; j >= 0; j--){
+                for(int j = 6; j >= 0; j--){
                     combString = dataColumns[j].get(occurrences.get(i)) + " " + combString;
                 }
                 searchdata.add(combString);
