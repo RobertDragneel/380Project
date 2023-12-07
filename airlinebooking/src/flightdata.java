@@ -72,13 +72,12 @@ public class flightdata {
     }
 
     public static List<String> search(String location, int num) {
-        List<String>[] data = dataColumns;
-        List<Integer> occurrences = findLocation(data, location, num);
+        List<Integer> occurrences = findLocation(dataColumns, location, num);
 
         if (occurrences.isEmpty()) {
             return null;
         } else {
-            return createSearchData(occurrences, data);
+            return createSearchData(occurrences, dataColumns);
         }
     }
 
@@ -106,15 +105,13 @@ public class flightdata {
     
 
     public static List<String> flightNumberSearch(String flightNumber) {
-        String input = flightNumber;
         List<String> temp = new ArrayList<>();
-        List<String>[] data = dataColumns;
-        List<Integer> occurrences = findLocation(data, input, 0);
+        List<Integer> occurrences = findLocation(dataColumns, flightNumber, 0);
 
         if (occurrences.isEmpty()) {
             temp.add("No matching flights found");
         } else {
-            temp = createSearchData(occurrences, data);
+            temp = createSearchData(occurrences, dataColumns);
         }
 
         return temp;
@@ -138,13 +135,13 @@ public class flightdata {
     
     /*public static void main(String[] args) {
 
-        List<String> test = filter("asd", "asdsa");
+        List<String> test = filter("ord", "mia");
         for (int i = 0; i < test.size(); i++) {
             System.out.println(test.get(i));
         }
 
         
-        List<String> test2 = flightNumberSearch("asdas");
+        List<String> test2 = flightNumberSearch("DL123");
         for (int i = 0; i < test2.size(); i++) {
             System.out.println(test2.get(i));
         }
