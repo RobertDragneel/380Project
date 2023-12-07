@@ -21,8 +21,8 @@ public class GUI {
 
     public GUI() {
         startingWindow = new Frame("Flight Reservation");
-        origin = new TextField(15); 
-        destination  = new TextField(15);
+        origin = new TextField(40); 
+        destination  = new TextField(40);
         search = new Button("Search");
         Label blankLabel = new Label(" ");
 
@@ -80,7 +80,7 @@ public class GUI {
 
                 
                 // Gets flight data from flightdata class
-                List<String> flights = flightdata.combine(originChoice, destinationChoice);
+                List<String> flights = flightdata.filter(originChoice, destinationChoice);
                 String flightChoices = String.join(", ", flights);
                 Label flightsList = new Label(flightChoices);
                 
