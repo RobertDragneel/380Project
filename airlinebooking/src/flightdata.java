@@ -144,7 +144,7 @@ public class flightdata {
             samedata.add("No matching flights found");
         }
 
-        else{
+        else if (results1 != null && results2 != null){
             //checks if input1 and 2 had any of the same flights if input 1 has more or they have an equal number flights
             if(results1.size() >= results2.size()){
                 for(int i = 0; i < results1.size(); i ++){
@@ -153,7 +153,7 @@ public class flightdata {
                             samedata.add(results1.get(i));
                         }
                     }
-            }   
+                }   
             }
             //checks if input1 and 2 had any of the same flights if input 2 has more flights
             else{
@@ -165,6 +165,9 @@ public class flightdata {
                     }
                 }
             }
+        }
+        else{
+            samedata.add("No matching flights found");
         }
 
         return samedata;
